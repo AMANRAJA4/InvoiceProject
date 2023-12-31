@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Invoice Details</title>
+</head>
+
+<body>
+
+    <div style="text-align: center;">
+        <h1>Invoice Details</h1>
+
+        <form method="post" action="{% url 'save_create' %}">
+            {% csrf_token %}
+            <table style="margin: 0px auto;">
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Quantity</th>
+                    <th>Unit price</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+
+                <tr>
+                    <td><input type="text" name="name" value=""></td>
+                    <td><input type="text" name="description" value=""></td>
+                    <td><input type="text" name="quantity" value=""></td>
+                    <td><input type="text" name="unit_price" value=""></td>
+                    <td><input type="text" name="price" value=""></td>
+                    <td><button type="submit">Save</button></td>
+                </tr>
+
+            </table>
+        </form>
+    </div>
+
+</body>
+
+</html>

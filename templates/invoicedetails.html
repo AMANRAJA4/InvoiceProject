@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <div style="text-align: center;">
+        <h1> Invoices Details</h1>
+
+        <h3><a href="{% url 'create' %}">Create invoice</a></h3>
+        <table style="margin: 0px auto;">
+            <tr>
+                <th>PK</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Quantity</th>
+                <th>Unit price</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+            
+            <tr>
+                <td>{{ details.invoice_id }}</td>
+                <td>{{ details.invoice.customer_name }}</td>
+                <td>{{ details.description }}</td>
+                <td>{{ details.quantity }}</td>
+                <td>{{ details.unit_price }}</td>
+                <td>{{ details.price }}</td>
+                <td><a href="{% url 'invoice_update' details.pk %}">Update</a></td>
+            </tr>
+            
+
+            
+        </table>
+    </div>
+
+</body>
+
+</html>
